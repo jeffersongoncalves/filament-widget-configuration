@@ -11,8 +11,11 @@ class WidgetConfigurationServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('filament-widget-configuration')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->hasConfigFile();
+    }
+
+    public function packageBooted(): void
+    {
+        WidgetConfigurationPlugin::make()->apply();
     }
 }

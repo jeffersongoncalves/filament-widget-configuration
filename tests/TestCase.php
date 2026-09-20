@@ -2,10 +2,10 @@
 
 namespace JeffersonGoncalves\Filament\WidgetConfiguration\Tests;
 
-use JeffersonGoncalves\Filament\WidgetConfiguration\Tests\Fixtures\TestPanelProvider;
-use JeffersonGoncalves\Filament\WidgetConfiguration\WidgetConfigurationServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Support\SupportServiceProvider;
+use JeffersonGoncalves\Filament\WidgetConfiguration\Tests\Fixtures\TestPanelProvider;
+use JeffersonGoncalves\Filament\WidgetConfiguration\WidgetConfigurationServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
