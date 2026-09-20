@@ -2,6 +2,8 @@
 
 namespace JeffersonGoncalves\Filament\WidgetConfiguration;
 
+use JeffersonGoncalves\Filament\WidgetConfiguration\Support\WidgetPollingIntervalHook;
+use Livewire\LivewireManager;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -11,8 +13,13 @@ class WidgetConfigurationServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('filament-widget-configuration')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->hasConfigFile();
+    }
+
+    public function packageBooted(): void
+    {
+        app(LivewireManager::class)->componentHook(WidgetPollingIntervalHook::class);
+
+        WidgetConfigurationPlugin::make()->apply();
     }
 }
